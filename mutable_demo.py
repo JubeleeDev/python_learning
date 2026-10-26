@@ -10,7 +10,7 @@ def default_values(value, mylist = []):
     mylist.append(value)
     print(mylist)
 
-def right_default_values(value, mylist = None):
+def right_default_values(value, mylist=None):
     if mylist is None:
         mylist = []
     mylist.append(value)
@@ -22,3 +22,4 @@ default_values(10)
 
 right_default_values(5)
 right_default_values(10)
+
