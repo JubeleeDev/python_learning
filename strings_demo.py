@@ -15,5 +15,6 @@ def normalize_spaces(text: str) -> str:
 
     return " ".join(result)
 
-print(count_words("alo alo dva tri dva raz Dva DVA"))
-print(count_words(normalize_spaces(" Hi    hi HI  ")))
+if __name__ == "__main__":
+    print(count_words("alo alo dva tri dva raz Dva DVA"))
+    print(count_words(normalize_spaces(" Hi    hi HI  ")))
