@@ -41,6 +41,7 @@ if __name__ == "__main__":
 
     for event in events:
         print(f"check event {event}. Returned event status is {handle_event(event)}")
+        print("-" * 20)
 
 
     
