@@ -6,6 +6,12 @@ class BankAccount:
     def __init__(self, owner: str, balance: float = 0) -> None:
         self.owner = owner
         self.balance = balance
+    
+    def __str__(self) -> str:
+        return f"Bank account. Owner: {self.owner}, his balance is {self.balance}"
+
+    def __repr__(self) -> str:
+        return f"BankAccount(owner='{self.owner}', balance={self.balance})"
 
     def deposit(self, amount: float) -> None:
         if amount <= 0:

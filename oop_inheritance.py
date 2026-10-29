@@ -5,6 +5,12 @@ class SavingsAccount(BankAccount):
         super().__init__(owner, balance)
         self.interest_rate = interest_rate
     
+    def __str__(self) -> str:
+        return f"Saving account. Owner: {self.owner}, balance is {self.balance}, interest rate is {self.interest_rate}"
+
+    def __repr__(self) -> str:
+        return f"SavingAccount(owner='{self.owner}', balance={self.balance}, interest_rate={self.interest_rate})"
+
     def add_interest(self) -> None:
         self.balance += (self.balance * self.interest_rate)
 
@@ -12,6 +18,12 @@ class CreditAccount(BankAccount):
     def __init__(self, owner: str, balance: float, credit_limit: float) -> None:
         super().__init__(owner, balance)
         self.credit_limit = credit_limit
+
+    def __str__(self) -> str:
+        return f"Credit account. Owner: {self.owner}, balance is {self.balance}, credit limit is {self.credit_limit}"
+
+    def __repr__(self) -> str:
+        return f"CreditAccount(owner='{self.owner}', balance={self.balance}, credit_limit={self.credit_limit})"
 
     def withdraw(self, amount: float) -> None:
         if amount <= 0:
