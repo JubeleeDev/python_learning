@@ -1,6 +1,9 @@
 
+from functools import wraps
 from collections.abc import Callable
+
 def log_call(func: Callable):
+    @wraps(func)
     def wrapper(*args, **kwargs):
         print(f"name={func.__name__}, args={args}, kwargs={kwargs}")
         result = func(*args, **kwargs)
@@ -21,3 +24,4 @@ def say_age(name: str, age: int = 0, description: str = "no description") -> str
 if __name__ == "__main__":
     print(sum_numbers(5, 10))
     print(say_age(name="Alex", description="Test description"))
+    print(sum_numbers.__name__)
