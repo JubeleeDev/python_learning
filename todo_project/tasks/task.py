@@ -1,7 +1,7 @@
 
 import datetime as dt
-
 from typing import Protocol
+
 
 class BaseTask(Protocol):
     title: str
@@ -12,7 +12,7 @@ class BaseTask(Protocol):
         ...
 
 
-class Task():
+class Task:
     task_id: int
     type_of_task: str
     title: str
@@ -44,7 +44,7 @@ class Task():
     def complete(self) -> None:
         self._is_complete = True
 
-class RepeatableTask():
+class RepeatableTask:
     task_id: int
     type_of_task: str
     title: str

@@ -1,6 +1,7 @@
 from todo_project.tasks.task import BaseTask
 
-class TaskRepository():
+
+class TaskRepository:
     _tasks_storage: list[BaseTask]
     _task_counter: int
 

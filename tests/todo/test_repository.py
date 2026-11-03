@@ -1,7 +1,8 @@
 
 import pytest
 from todo_project.tasks.repository import TaskRepository
-from todo_project.tasks.task import Task, RepeatableTask
+from todo_project.tasks.task import RepeatableTask, Task
+
 
 class TestRepository:
 

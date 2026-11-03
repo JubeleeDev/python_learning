@@ -1,7 +1,9 @@
+import json
 import logging
-from todo_project.tasks.task import Task, RepeatableTask
+
 from todo_project.tasks.repository import TaskRepository
 from todo_project.tasks.storage import StorageRepository
+from todo_project.tasks.task import RepeatableTask, Task
 from todo_project.tasks.utils import convert_to_number
 
 logger = logging.getLogger(__name__)
@@ -76,8 +78,10 @@ if __name__ == "__main__":
                 try:
                     storage.load_from_file(repo)
                     print("data is successfully loaded")
-                except Exception as e:
-                    print("error while loading data from file", e)
+                except FileNotFoundError:
+                    print("file for load data is not exists")
+                except json.JSONDecodeError:
+                    print("fail to decode file while loading")
             case "5":
                 task_id = convert_to_number(value=input("Please, input an id of task: "), name="task_id")
 

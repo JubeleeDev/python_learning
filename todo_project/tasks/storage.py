@@ -1,11 +1,13 @@
 
-import pathlib
-import json
 import datetime as dt
-from todo_project.tasks.task import BaseTask, Task, RepeatableTask
-from todo_project.tasks.repository import TaskRepository
+import json
+import pathlib
 
-class StorageRepository():
+from todo_project.tasks.repository import TaskRepository
+from todo_project.tasks.task import BaseTask, RepeatableTask, Task
+
+
+class StorageRepository:
     path: str
 
     def __init__(self, path: str | None = None) -> None:
@@ -18,7 +20,7 @@ class StorageRepository():
 
     def save_to_file(self, tasks: list[BaseTask]) -> None:
 
-        result: list[dict] = list()
+        result: list[dict] = []
 
         for task in tasks:
             dict_task = {
