@@ -2,7 +2,9 @@
 name = "learn-proj"
 version = "0.1.0"
 requires-python = ">=3.15"
-dependencies = []
+dependencies = [
+    "httpx>=0.28.1",
+]
 
 [dependency-groups]
 dev = [
